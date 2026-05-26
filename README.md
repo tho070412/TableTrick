@@ -1,16 +1,94 @@
-# React + Vite
+# Table-Track — Gestor de Reservas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web SPA desarrollada en React para que los anfitriones de un restaurante puedan gestionar las reservas de mesas de forma eficiente durante su turno.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Stack tecnológico
 
-## React Compiler
+| Tecnología | Uso |
+|---|---|
+| React 18 + Vite | Framework y bundler |
+| react-router-dom v6 | Enrutamiento SPA |
+| Tailwind CSS v3 | Estilos |
+| SweetAlert2 | Alertas y confirmaciones |
+| Axios | Peticiones HTTP |
+| MockAPI | API REST simulada |
+| LocalStorage | Persistencia de sesión |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Estructura del recurso `reservas`:
+
+| Campo | Tipo |
+|---|---|
+| `nombreCliente` | String |
+| `fechaHora` | String |
+| `cantidadPersonas` | Number |
+| `estado` | String (`En Espera` / `Confirmada` / `Finalizada`) |
+
+## 📁 Estructura del proyecto
+
+```
+src/
+├── components/
+│   ├── FilterBar.jsx
+│   ├── Modal.jsx
+│   ├── Navbar.jsx
+│   ├── ProtectedRoute.jsx
+│   ├── ReservationCard.jsx
+│   ├── ReservationForm.jsx
+│   ├── Spinner.jsx
+│   └── StatsBar.jsx
+├── hooks/
+│   └── useReservas.js
+├── layouts/
+│   └── DashboardLayout.jsx
+├── pages/
+│   ├── LoginPage.jsx
+│   └── PanelPage.jsx
+├── services/
+│   └── reservasService.js
+└── utils/
+    ├── auth.js
+    └── helpers.js
+```
+
+## ⚙️ Instalación local
+
+```bash
+git clon https://github.com/tho070412/TableTrick.git
+cd table-track
+npm install
+```
+const BASE_URL = 'https://table-track-api.onrender.com/reservas'
+
+
+```bash
+npm run dev
+```
+
+## ✨ Funcionalidades
+
+- 🔐 Login con nombre completo + selección de turno (Mañana/Tarde/Noche)
+- 🛡️ Rutas protegidas
+- 📋 Listado de reservas en tarjetas
+- ➕ Crear reserva con validación de campos obligatorios
+- ✏️ Editar cualquier dato de una reserva
+- ✅ Botón rápido "Finalizar" para liberar mesa
+- 🗑️ Cancelar reserva con confirmación SweetAlert2
+- 📊 Panel de estadísticas (total, confirmadas, en espera, personas activas)
+- 🔍 Filtros por estado
+- ⏳ Spinner durante peticiones HTTP
+- 📱 Diseño responsivo optimizado para tablet/móvil (uso en piso)
+
+## 🌿 GitFlow
+
+```
+main → develop → feature/login-system
+                → feature/reservations-crud
+                → feature/ui-polishing
+```
+
+## 👤 Autor
+
+Thomas Rodriguez Londoño
