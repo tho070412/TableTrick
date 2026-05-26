@@ -1,0 +1,32 @@
+{
+  "reservas": [
+    {
+      "id": "1",
+      "nombreCliente": "María González",
+      "fechaHora": "2026-05-25T19:30:00",
+      "cantidadPersonas": 4,
+      "estado": "Confirmada"
+    },
+    {
+      "id": "2",
+      "nombreCliente": "Carlos Pérez",
+      "fechaHora": "2026-05-25T20:00:00",
+      "cantidadPersonas": 2,
+      "estado": "En Espera"
+    },
+    {
+      "id": "3",
+      "nombreCliente": "Ana Martínez",
+      "fechaHora": "2026-05-25T21:00:00",
+      "cantidadPersonas": 6,
+      "estado": "Confirmada"
+    },
+    {
+      "id": "4",
+      "nombreCliente": "Luis Rodríguez",
+      "fechaHora": "2026-05-25T18:00:00",
+      "cantidadPersonas": 3,
+      "estado": "Finalizada"
+    }
+  ]
+}
