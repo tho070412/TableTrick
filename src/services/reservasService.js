@@ -1,8 +1,7 @@
 import axios from 'axios'
 
 
-const BASE_URL = 'http://localhost:3003/reservas'
-
+const BASE_URL = 'https://table-track-api.onrender.com/reservas'
 const api = axios.create({
   baseURL: BASE_URL,
   headers: { 'Content-Type': 'application/json' },
